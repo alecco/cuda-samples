@@ -31,6 +31,7 @@ target_compile_features(conjugateGradientMultiBlockCG PRIVATE cxx_std_17 cuda_st
 set_target_properties(conjugateGradientMultiBlockCG PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
 target_link_libraries(conjugateGradientMultiBlockCG PRIVATE
+    m
     CUDA::cublas
     CUDA::cusparse
 )

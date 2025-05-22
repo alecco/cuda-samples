@@ -29,3 +29,4 @@ target_compile_options(simpleAWBarrier PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:--exte
 target_compile_features(simpleAWBarrier PRIVATE cxx_std_17 cuda_std_17)
 
 set_target_properties(simpleAWBarrier PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+target_link_libraries(simpleAWBarrier m)
