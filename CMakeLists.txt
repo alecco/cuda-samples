@@ -1,5 +1,12 @@
 cmake_minimum_required(VERSION 3.20)
 
+set(CMAKE_C_COMPILER gcc-13)
+set(CMAKE_CXX_COMPILER g++-13)
+set(CMAKE_CUDA_HOST_COMPILER gcc-13)
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -ccbin=gcc-13")
+
+set(CMAKE_CUDA_STANDARD_LIBRARIES "${CMAKE_CUDA_STANDARD_LIBRARIES} -lstdc++") # XXX needed?
+
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../../cmake/Modules")
 
 project(cuda-samples LANGUAGES C CXX CUDA)
